@@ -40,7 +40,9 @@
       <h1>PROFILE</h1>
         <div class="colomn_main">
           <div id="profile">
-            
+            <p>Hi !</p>
+            <p>You want to My details?</p>
+
           </div><!-- profile-->
         </div><!-- colomn_main -->
       </div><!-- colomn_content -->
@@ -49,49 +51,46 @@
     <div class="content_box">
       <div class="colomn_content">
       <h1>SKILL</h1>
-      <div class="colomn_main">
-      <div id="skill">
-      <p class="skill_title">WEB</p>
+        <div class="colomn_main">
+          <div id="skill">
 
-      <div class="chartbox">
-      <p>HTML 5</p>
-        <svg class="backsvg"></svg>
-        <svg class="chartsvg"></svg>
-        <div class="percent"></div>
-      </div>
+            <div class="chartbox">
+              <p>HTML</p>
+                <svg class="backsvg"></svg>
+                <svg class="chartsvg"></svg>
+                <div class="percent"></div>
+            </div>
 
-      <div class="chartbox">
-      <p>CSS 3</p>
-        <svg class="backsvg"></svg>
-        <svg class="chartsvg"></svg>
-        <div class="percent"></div>
-      </div>
+            <div class="chartbox">
+              <p>CSS</p>
+                <svg class="backsvg"></svg>
+                <svg class="chartsvg"></svg>
+                <div class="percent"></div>
+            </div>
 
-      <div class="chartbox">
-      <p>JAVA SCRIPT</p>
-        <svg class="backsvg"></svg>
-        <svg class="chartsvg"></svg>
-        <div class="percent"></div>
-      </div>
+            <div class="chartbox">
+              <p>JAVA SCRIPT</p>
+                <svg class="backsvg"></svg>
+                <svg class="chartsvg"></svg>
+                <div class="percent"></div>
+            </div>
 
-      <div class="chartbox">
-      <p>PHP</p>
-        <svg class="backsvg"></svg>
-        <svg class="chartsvg"></svg>
-        <div class="percent"></div>
-      </div>
+            <div class="chartbox">
+              <p>PHP</p>
+                <svg class="backsvg"></svg>
+                <svg class="chartsvg"></svg>
+                <div class="percent"></div>
+            </div>
 
-      <div class="chartbox">
-      <p>ADOBE</p>
-        <svg class="backsvg"></svg>
-        <svg class="chartsvg"></svg>
-        <div class="percent"></div>
-      </div>
-      <p></p>
+            <div class="chartbox">
+              <p>ETC</p>
+                <svg class="backsvg"></svg>
+                <svg class="chartsvg"></svg>
+                <div class="percent"></div>
+            </div>
 
-      </div><!-- skill -->
-      </div>
-
+          </div><!-- skill -->
+        </div><!-- colomn_main -->
       </div><!-- colomn_content -->
     </div><!-- content_box -->
 
@@ -99,31 +98,8 @@
       <div class="colomn_content">
         <h1>WORKS</h1>
       	<div class="colomn_main">
-        <div id="works">
-          <div class="work_design">
-              <div class="works">
-              <img src="img/pura.png" alt=""/><!-- </a> -->
-              </div>
-              
-              <div class="works">
-              <img src="img/ryokan.png" alt=""/>
-              </div>
-
-              <div class="works">
-              <img src="img/suizokukan.png" alt=""/>
-              </div>
-
-              <div class="works">
-              <img src="img/ankor.png" alt=""/>
-              </div>
-
-              <div class="works">
-              <a href="../../xampp/recep/visited/index.php">
-                <img src="img/recep.png" alt="recep">
-              </a>
-              </div>
-          </div>
-        </div><!--works -->
+          <div id="works">
+          </div><!--works -->
       	</div><!-- colomn_main -->
       </div><!-- colomn_content -->
     </div><!-- content_box -->
@@ -131,24 +107,24 @@
     <div class="content_box">
       <div class="colomn_content">
       <h1>CONTACT</h1>
-      <div class="colomn_main">
-      <div id="contact">
-      <form action="sendMessage.php" method="post">
-      <div class="text">
-      Name<input type="text" name="name">
-      </div>
-      <label>Message</label>
-      <textarea name="message"></textarea>
-      <input type="submit" value="send" id="sendmail">
-      </form> 
-      <div class="error">
-        <p class="hidden_text">plz enter your name</p>
-        <p class="hidden_text">plz enter message</p>
-        <p class="hidden_text">Thanx.</p>
-      </div>
-      </div>
-      </div>	
-      </div><!-- colomn_content --> 
+        <div class="colomn_main">
+          <div id="contact">
+            <form action="sendMessage.php" method="post">
+            <div class="text">
+            Name<input type="text" name="name">
+            </div>
+            <label>Message</label>
+            <textarea name="message"></textarea>
+            <input type="submit" value="send" id="sendmail">
+            </form> 
+            <div class="error">
+              <p class="hidden_text">plz enter your name</p>
+              <p class="hidden_text">plz enter message</p>
+              <p class="hidden_text">Thanx.</p>
+            </div>
+          </div><!-- contact -->
+        </div><!-- colomn_main -->
+      </div><!-- colomn_content -->
     </div><!-- content_box -->
   </main>
 </body>
