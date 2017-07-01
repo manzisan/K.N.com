@@ -54,7 +54,7 @@ p{text-align: center;}
   background-color: #aaa;
   height: 100%;
   float: left;
-  transition: 1.5s;
+  transition: 0.7s;
   overflow: hidden;
   position: relative;
   border-right: solid 1px #000;
@@ -213,6 +213,23 @@ p{text-align: center;}
     text-align: center;
     font-size: 30px;
   }
+  .icon-box {
+    width: 420px;
+    height: 500px;
+    margin: 0 auto;
+    .icon {
+      display: inline-block;
+      margin: 0;
+      width: 200px;
+      height: 200px;
+      transition: .5s;
+      a {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 /***************************************************
@@ -298,18 +315,4 @@ p{text-align: center;}
     background-color: #000;
     color: #aaa;
   }
-}
-
-.error {
-  width: 40%;
-  margin: auto;
-  margin-bottom: 32px;
-  color: #f00;
-}
-
-.hidden-text {
-  width: 100%;
-  opacity: 0;
-  transition: 1s;
-  text-align: center;
 }

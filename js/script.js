@@ -5,9 +5,9 @@ window.onload=function(){
   //**********************************************
 
   var c_box = document.getElementsByClassName('content-box');
-  var c_main=document.getElementsByClassName('colomn-main');
-  var c_content=document.getElementsByClassName('colomn-content');
-  var c_img = document.getElementsByClassName('colomn-img');
+  var c_main = document.getElementsByClassName('colomn-main');
+  var c_content = document.getElementsByClassName('colomn-content');
+  // var c_img = document.getElementsByClassName('colomn-img');
 
   var countnum = 5;
 
@@ -16,11 +16,23 @@ window.onload=function(){
       c_box[i].addEventListener('click',function(num){
         countnum++;
         $(".content-box").not(":nth-child("+countnum+")").css("width","10%");
-        this.style.width="60%";     
-        
+        this.style.width="60%";
+
         FlowText();
 
+        var click_flg = true;
+        $(".content-box").on('click',function(){
+          
+          if(click_flg){
+            //ボタンを一旦無効に
+            click_flg = false;
 
+            console.log("aa");
+
+          } else {
+            return false;
+          }
+        });
       });
     }
   }
@@ -36,12 +48,15 @@ window.onload=function(){
   var flowFlag = true;
   var text = new Array;
 
+  var icon = document.getElementsByClassName('icon');
+
   for(var i = 0; i < flow.length; i++) {
     text[i] = flow[i].innerHTML;
     flow[i].innerHTML = "";
   }
 
   function FlowText(){
+    console.log(flowFlag);
     flowFlag = true;
     // if dont look
     if (c_box[1].style.width != "60%") {
@@ -55,7 +70,7 @@ window.onload=function(){
       }
     }
 
-    try{
+    try {
       flow[flowNum].innerHTML += text[flowNum].charAt(flowCount);
       flowCount++;
       if(flowCount == text[flowNum].length){
@@ -65,9 +80,14 @@ window.onload=function(){
       if (flowFlag == true) {
         setTimeout(FlowText,flowTime);
       }
-    }catch(e){
+    } catch(e) {
       // none
     }
+    setTimeout(function(){
+      for (var i = icon.length - 1; i >= 0; i--) {
+        icon[i].style.opacity = "1";
+      }
+    },flowTime*flowTime);
   }
 
   //**********************************************
@@ -259,9 +279,4 @@ window.onload=function(){
   }
   // setTimeout(start,2000);
   start();
-
-  if($('.content-box').is(':animated')) {
-    console.log("ani");
-  }
-
 }

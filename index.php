@@ -22,6 +22,7 @@
       <h1>HOME</h1>
       <div class="colomn-main">
         <div id="home">
+
         <div id="inName"></div>
 
         <table class="update">
@@ -56,8 +57,20 @@
         <h1>PROFILE</h1>
         <div class="colomn-main">
           <div id="profile">
-            <p class="flow">Hi !</p>
-            <p class="flow">You want to My details?</p>
+            <div class="icon-box">
+              <div class="icon">
+                <a href=""><img src="img/git.png" alt=""></a>
+              </div>
+              <div class="icon">
+                <a href=""><img src="img/facebook.png" alt=""></a>
+              </div>
+              <div class="icon">
+                <a href=""><img src="img/twitter.png" alt=""></a>
+              </div>
+              <div class="icon">
+                <a href="http://steamcommunity.com/id/manzisan"><img src="img/steam.png" alt="steam"></a>
+              </div>
+            </div>
           </div>
         </div>
       </div><!-- colomn-content -->    
@@ -194,7 +207,7 @@
 
 
 
-                  
+
               </div>
             </div><!--works -->
           </div><!-- colomn-main -->
