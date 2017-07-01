@@ -22,6 +22,7 @@
       <h1>HOME</h1>
       <div class="colomn-main">
         <div id="home">
+
         <div id="inName"></div>
 
         <table class="update">
@@ -56,8 +57,20 @@
         <h1>PROFILE</h1>
         <div class="colomn-main">
           <div id="profile">
-            <p class="flow">Hi !</p>
-            <p class="flow">You want to My details?</p>
+            <div class="icon-box">
+              <div class="icon">
+                <a href="https://github.com/manzisan"><img src="img/git.png" alt=""></a>
+              </div>
+              <div class="icon">
+                <a href=""><img src="img/facebook.png" alt=""></a>
+              </div>
+              <div class="icon">
+                <a href=""><img src="img/twitter.png" alt=""></a>
+              </div>
+              <div class="icon">
+                <a href="http://steamcommunity.com/id/manzisan"><img src="img/steam.png" alt="steam"></a>
+              </div>
+            </div>
           </div>
         </div>
       </div><!-- colomn-content -->    
@@ -188,21 +201,13 @@
           <div class="colomn-main">
             <div id="works">
               <div class="work-design">
-                  <div class="project">
-                  <img src="img/pura.png" alt=""/><!-- </a> -->
-                  </div>
                   
-                  <div class="project">
-                  <img src="img/ryokan.png" alt=""/>
-                  </div>
 
-                  <div class="project">
-                  <img src="img/suizokukan.png" alt=""/>
-                  </div>
 
-                  <div class="project">
-                  <img src="img/ankor.png" alt=""/>
-                  </div>
+
+
+
+
               </div>
             </div><!--works -->
           </div><!-- colomn-main -->
@@ -220,9 +225,14 @@
         <div class="colomn-main">
           <div id="contact">
             <form action="sendMessage.php" method="post">
-              <div class="text">Name<input type="text" name="name"></div>
-              <label>Message</label>
-              <textarea name="message"></textarea>
+              <div class="input-column">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+              </div>
+              <div class="input-column">
+                <label for="message">Message</label>
+                <textarea name="message" id="message"></textarea>
+              </div>
               <input type="submit" value="send" id="sendmail">
             </form> 
             <div class="error">
@@ -238,7 +248,39 @@
   </main>
 </body>
 <script>
-   var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-    $(document).on(scroll_event,function(e){e.preventDefault();});
+
+  var main = document.getElementsByTagName('main');
+ 
+  //スクロール禁止用関数
+  function no_scroll(){
+    //PC用
+    var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
+
+    $(document).on(scroll_event,function(e){
+      e.preventDefault();
+    });
+    //SP用
+    $(document).on('touchmove.noScroll', function(e) {
+      e.preventDefault();
+    });
+  }
+   
+  //スクロール復活用関数
+  function return_scroll(){
+    //PC用
+    var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
+    $(document).off(scroll_event);
+    //SP用
+    $(document).off('.noScroll');
+
+  }
+
+  no_scroll();
+  
+  console.log(window.parent.screen.width);
+
+  if (window.parent.screen.width == "375") {
+    return_scroll();
+  }
 </script>
 </html>

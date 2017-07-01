@@ -2,11 +2,6 @@
 
 @import "chart-animation","reset";
 
-
-$smallScreen: "only screen and (max-width: 750px)";
-
-$image-path: "../images/";
-
 // @font-face {
 //   font-family: 'Caviar Dreams';
 //   src: url('Caviar Dreams.eot');
@@ -19,13 +14,13 @@ $image-path: "../images/";
   font-family: "Caviar Dreams";
   /*font-family: "ヒラギノ角ゴ";*/
   /*font-family: "Osaka";*/
-  text-align: center;
   text-decoration: none;
 }
 
-  html  {height: 100%;}
-  body  {height: 100%;background-color: #aaa;}
-  main  {height: 100%;transition: 2s;}
+html  {height: 100%;}
+body  {height: 100%;background-color: #aaa;}
+main  {height: 100%;transition: 2s;}
+p{text-align: center;}
 
 /***************************************************
   in name
@@ -64,6 +59,7 @@ $image-path: "../images/";
   box-sizing: border-box;
   opacity: 0;
   display: none;
+
   &:first-child {
     width: 100%;
     opacity: 1;
@@ -91,7 +87,6 @@ $image-path: "../images/";
       height: 10%;
       padding-top: 30px;
       font-size: 24px;
-      width: 100%;
       &:first-child {
         opacity: 0;
         transition: 2s;
@@ -143,12 +138,13 @@ $image-path: "../images/";
     font-size: 22px;
   }
   .chartbox {
+    text-align: center;
     position: relative;
     float: left;
     top: -10px;
     p {
       width: 150px;
-      font-size: 15px;
+      font-size: 14px;
     }
     svg {
       transform: rotate(-90deg);
@@ -157,16 +153,16 @@ $image-path: "../images/";
     }
     circle {
       fill: transparent;
+      text-align: center;
       stroke-width: 5;
       animation-iteration-count: 1;
       animation-duration: 2s;
       animation-fill-mode: forwards;
-      /*stroke: #F7464A;*/
     }
     .backsvg {
       position: absolute;
       z-index: 0;
-      left: 15px;
+      left: 16px;
     }
     .percent {
       position: absolute;
@@ -199,7 +195,6 @@ $image-path: "../images/";
   animation-duration: 3s;
   animation-fill-mode: forwards;
   animation-name: circleback;
-  /*stroke: #eee !important;*/
   stroke-width: 5;
   stroke: #fff;
 }
@@ -210,10 +205,27 @@ $image-path: "../images/";
 
 #profile {
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
   p {
     text-align: center;
     font-size: 30px;
+  }
+  .icon-box {
+    width: 420px;
+    height: 500px;
+    margin: 0 auto;
+    .icon {
+      display: inline-block;
+      margin: 0;
+      width: 200px;
+      height: 200px;
+      transition: .5s;
+      a {
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -222,7 +234,7 @@ $image-path: "../images/";
 ***************************************************/
 
 #works {
-  padding-top: 30px;
+  padding-top: 32px;
   margin: auto;
   .project {
     height: 220px;
@@ -244,71 +256,54 @@ $image-path: "../images/";
 
 #contact {
   margin: auto;
+  width: 640px;
   position: relative;
-  overflow: hidden;
-  label {
-    margin-top: 30px;
+  .input-column {
+    margin-bottom: 24px;
+    label {
+      width: 100%;
+      padding: 4px;
+    }
+    #name {
+      width: 100%;
+      padding: 8px;
+      appearance: none;
+      border: none;
+      border-bottom: solid 1px #000;
+      background-color: #aaa;
+      font-size: 22px;
+      ime-mode: disabled;
+      box-sizing: border-box;
+    }
+    #message {
+      resize: none;
+      text-align: left;
+      width: 100%;
+      height: 200px;
+      margin: auto;
+      display: block;
+      background-color: #aaa;
+      border: none;
+      border: solid 1px #000;
+      padding: 8px;
+      font-size: 16px;
+      ime-mode: disabled;
+      box-sizing: border-box;
+    }
   }
 }
 
-.error {
-  width: 40%;
-  margin: auto;
-  margin-bottom: 30px;
-  color: #f00;
-}
 
-.hidden-text {
-  width: 100%;
-  opacity: 0;
-  transition: 1s;
-  text-align: center;
-}
-
-.text {
-  clear: both;
-  width: 260px;
-  margin: auto;
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-.text input {
-  width: 180px;
-  float: right;
-  appearance: none;
-  border: none;
-  border-bottom: solid 1px #000;
-  background-color: #aaa;
-  font-size: 22px;
-  ime-mode: disabled;
-}
-
-textarea {
-  resize: none;
-  text-align: left;
-  width: 400px;
-  height: 150px;
-  margin: auto;
-  display: block;
-  background-color: #aaa;
-  border: none;
-  border: solid 1px #000;
-  padding: 8px;
-  font-size: 16px;
-  ime-mode: disabled;
-}
 
 #sendmail {
+  display: block;
   appearance: none;
-  border: none;
   clear: both;
-  width: 250px;
-  padding: 5px 0px;
-  margin: auto;
-  margin: 30px 0px 50px 0px;
-  border-radius: 5px;
-  transition: 0.1s;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  margin: 32px 0 48px 0;
+  border-radius: 4px;
   background-color: #aaa;
   border: solid 1px #000;
   transition: 0.2s;
