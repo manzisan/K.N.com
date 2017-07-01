@@ -17,7 +17,11 @@ window.onload=function(){
         countnum++;
         $(".content-box").not(":nth-child("+countnum+")").css("width","10%");
         this.style.width="60%";
-        setTimeout(FlowText,flowTime);
+        if (c_box[1].style.width != "60%") {
+          flowCount = 0;
+          flowNum = 0;
+          FlowText();
+        }
       });
     }
   }
@@ -38,9 +42,13 @@ window.onload=function(){
   }
 
   function FlowText(){
+    flow[flowNum].style.display="block";
+
+    // if dont look
     if (c_box[1].style.width != "60%") {
       flowNum = 0;
       for (var i = 0; i < flow.length; i++) {
+        flow[i].style.display="none";
         flow[i].innerHTML = "";
       }
     }

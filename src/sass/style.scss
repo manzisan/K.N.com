@@ -2,10 +2,8 @@
 
 @import "chart-animation","reset";
 
-
 $smallScreen: "only screen and (max-width: 750px)";
-
-$image-path: "../images/";
+// using for @media #{$smallScreen} {}
 
 // @font-face {
 //   font-family: 'Caviar Dreams';
@@ -23,9 +21,9 @@ $image-path: "../images/";
   text-decoration: none;
 }
 
-  html  {height: 100%;}
-  body  {height: 100%;background-color: #aaa;}
-  main  {height: 100%;transition: 2s;}
+html  {height: 100%;}
+body  {height: 100%;background-color: #aaa;}
+main  {height: 100%;transition: 2s;}
 
 /***************************************************
   in name
@@ -64,6 +62,7 @@ $image-path: "../images/";
   box-sizing: border-box;
   opacity: 0;
   display: none;
+
   &:first-child {
     width: 100%;
     opacity: 1;
@@ -91,7 +90,6 @@ $image-path: "../images/";
       height: 10%;
       padding-top: 30px;
       font-size: 24px;
-      width: 100%;
       &:first-child {
         opacity: 0;
         transition: 2s;
