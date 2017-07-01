@@ -59,7 +59,7 @@
           <div id="profile">
             <div class="icon-box">
               <div class="icon">
-                <a href=""><img src="img/git.png" alt=""></a>
+                <a href="https://github.com/manzisan"><img src="img/git.png" alt=""></a>
               </div>
               <div class="icon">
                 <a href=""><img src="img/facebook.png" alt=""></a>
@@ -248,7 +248,39 @@
   </main>
 </body>
 <script>
-   var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-    $(document).on(scroll_event,function(e){e.preventDefault();});
+
+  var main = document.getElementsByTagName('main');
+ 
+  //スクロール禁止用関数
+  function no_scroll(){
+    //PC用
+    var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
+
+    $(document).on(scroll_event,function(e){
+      e.preventDefault();
+    });
+    //SP用
+    $(document).on('touchmove.noScroll', function(e) {
+      e.preventDefault();
+    });
+  }
+   
+  //スクロール復活用関数
+  function return_scroll(){
+    //PC用
+    var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
+    $(document).off(scroll_event);
+    //SP用
+    $(document).off('.noScroll');
+
+  }
+
+  no_scroll();
+  
+  console.log(window.parent.screen.width);
+
+  if (window.parent.screen.width == "375") {
+    return_scroll();
+  }
 </script>
 </html>
