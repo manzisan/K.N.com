@@ -1,8 +1,8 @@
 window.onload=function(){
 
-//**********************************************
-// change window width
-//**********************************************
+  //**********************************************
+  // change window width
+  //**********************************************
 
   var c_box = document.getElementsByClassName('content-box');
   var c_main=document.getElementsByClassName('colomn-main');
@@ -16,12 +16,11 @@ window.onload=function(){
       c_box[i].addEventListener('click',function(num){
         countnum++;
         $(".content-box").not(":nth-child("+countnum+")").css("width","10%");
-        this.style.width="60%";
-        if (c_box[1].style.width != "60%") {
-          flowCount = 0;
-          flowNum = 0;
-          FlowText();
-        }
+        this.style.width="60%";     
+        
+        FlowText();
+
+
       });
     }
   }
@@ -33,7 +32,8 @@ window.onload=function(){
   var flow = document.getElementsByClassName('flow');
   var flowNum = 0;  // text array number
   var flowCount = 0;  // inner text length count
-  var flowTime = 75
+  var flowTime = 50
+  var flowFlag = true;
   var text = new Array;
 
   for(var i = 0; i < flow.length; i++) {
@@ -42,22 +42,19 @@ window.onload=function(){
   }
 
   function FlowText(){
-    flow[flowNum].style.display="block";
-
+    flowFlag = true;
     // if dont look
     if (c_box[1].style.width != "60%") {
       flowNum = 0;
       for (var i = 0; i < flow.length; i++) {
-        flow[i].style.display="none";
         flow[i].innerHTML = "";
+        // flow[i].style
+        if (i == flowNum) {
+          flowFlag = false;
+        }
       }
     }
-    console.log("flowCount:"+flowCount);
-    console.log("flownum:"+flowNum);
-    // console.log()
-    // for (var i = 0; i < flow.length; i++) {
-    //   if (flow[i] == text[flownum].length) {}
-    // }
+
     try{
       flow[flowNum].innerHTML += text[flowNum].charAt(flowCount);
       flowCount++;
@@ -65,7 +62,9 @@ window.onload=function(){
         flowNum++;
         flowCount = 0;
       }
-      setTimeout(FlowText,flowTime);
+      if (flowFlag == true) {
+        setTimeout(FlowText,flowTime);
+      }
     }catch(e){
       // none
     }
@@ -260,4 +259,9 @@ window.onload=function(){
   }
   // setTimeout(start,2000);
   start();
+
+  if($('.content-box').is(':animated')) {
+    console.log("ani");
+  }
+
 }

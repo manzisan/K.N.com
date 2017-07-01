@@ -188,21 +188,13 @@
           <div class="colomn-main">
             <div id="works">
               <div class="work-design">
-                  <div class="project">
-                  <img src="img/pura.png" alt=""/><!-- </a> -->
-                  </div>
                   
-                  <div class="project">
-                  <img src="img/ryokan.png" alt=""/>
-                  </div>
 
-                  <div class="project">
-                  <img src="img/suizokukan.png" alt=""/>
-                  </div>
 
-                  <div class="project">
-                  <img src="img/ankor.png" alt=""/>
-                  </div>
+
+
+
+                  
               </div>
             </div><!--works -->
           </div><!-- colomn-main -->
@@ -220,9 +212,14 @@
         <div class="colomn-main">
           <div id="contact">
             <form action="sendMessage.php" method="post">
-              <div class="text">Name<input type="text" name="name"></div>
-              <label>Message</label>
-              <textarea name="message"></textarea>
+              <div class="input-column">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+              </div>
+              <div class="input-column">
+                <label for="message">Message</label>
+                <textarea name="message" id="message"></textarea>
+              </div>
               <input type="submit" value="send" id="sendmail">
             </form> 
             <div class="error">
