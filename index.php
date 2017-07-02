@@ -4,12 +4,31 @@
 <meta charset="utf-8">
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 <link rel="stylesheet" type="text/css" href="./build/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
   </head>
     <title>KUMAKURA NAOKI.com</title>
   </head>
 <body>
+  <header>
+    <h1>KUMAKURA NAOKI.com</h1>
+    <nav>
+      <ul>
+        <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="#profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        <li><a href="#skill"><i class="fa fa-pie-chart" aria-hidden="true"></i></a></li>
+        <li><a href="#works"><i class="fa fa-html5" aria-hidden="true"></i></a></li>
+        <li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+      </ul>
+    </nav>
+    <ul class="icon">
+      <li><a href="https://github.com/manzisan" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href="http://steamcommunity.com/id/manzisan" target="_blank"><i class="fa fa-steam" aria-hidden="true"></i></a></li>
+    </ul>
+  </header>
   <main>
 
     <!-- home -->
@@ -43,6 +62,7 @@
             <td>Update my skill List.</td>
           </tr>
         </table>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
         </div><!--home-->
       </div>      
       </div><!-- colomn-content -->
@@ -59,16 +79,16 @@
           <div id="profile">
             <div class="icon-box">
               <div class="icon">
-                <a href="https://github.com/manzisan"><img src="img/git.png" alt=""></a>
+                
               </div>
               <div class="icon">
-                <a href=""><img src="img/facebook.png" alt=""></a>
+                
               </div>
               <div class="icon">
-                <a href=""><img src="img/twitter.png" alt=""></a>
+                
               </div>
               <div class="icon">
-                <a href="http://steamcommunity.com/id/manzisan"><img src="img/steam.png" alt="steam"></a>
+                
               </div>
             </div>
           </div>
@@ -248,39 +268,11 @@
   </main>
 </body>
 <script>
-
-  var main = document.getElementsByTagName('main');
- 
-  //スクロール禁止用関数
-  function no_scroll(){
-    //PC用
-    var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-
-    $(document).on(scroll_event,function(e){
-      e.preventDefault();
-    });
-    //SP用
-    $(document).on('touchmove.noScroll', function(e) {
-      e.preventDefault();
-    });
-  }
-   
-  //スクロール復活用関数
-  function return_scroll(){
-    //PC用
-    var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-    $(document).off(scroll_event);
-    //SP用
-    $(document).off('.noScroll');
-
-  }
-
-  no_scroll();
-  
-  console.log(window.parent.screen.width);
-
-  if (window.parent.screen.width == "375") {
-    return_scroll();
-  }
+$(function(){
+    $("a[href^='#']").click(function(){
+    $("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500 ,"swing");
+    return false;
+    })
+});
 </script>
 </html>

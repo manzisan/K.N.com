@@ -3,81 +3,6 @@ window.onload=function(){
   var c_box = document.getElementsByClassName('content-box');
   var c_main = document.getElementsByClassName('colomn-main');
   var c_content = document.getElementsByClassName('colomn-content');
-  // PC
-  if (window.parent.screen.width != "375") {
-    //**********************************************
-    // change window width
-    //**********************************************
-
-    // var c_img = document.getElementsByClassName('colomn-img');
-
-    var countnum = 5;
-
-    function setWindow() {
-      for (var i = 0; i < c_box.length; i++){
-        c_box[i].addEventListener('click',function(num){
-          countnum++;
-          $(".content-box").not(":nth-child("+countnum+")").css("width","10%");
-          this.style.width="60%";
-
-          FlowText();
-
-        });
-      }
-    }
-
-    //**********************************************
-    // flow text
-    //**********************************************
-
-    var flow = document.getElementsByClassName('flow');
-    var flowNum = 0;  // text array number
-    var flowCount = 0;  // inner text length count
-    var flowTime = 50
-    var flowFlag = true;
-    var text = new Array;
-
-    var icon = document.getElementsByClassName('icon');
-
-    for(var i = 0; i < flow.length; i++) {
-      text[i] = flow[i].innerHTML;
-      flow[i].innerHTML = "";
-    }
-
-    function FlowText(){
-      console.log(flowFlag);
-      flowFlag = true;
-      // if dont look
-      if (c_box[1].style.width != "60%") {
-        flowNum = 0;
-        for (var i = 0; i < flow.length; i++) {
-          flow[i].innerHTML = "";
-          // flow[i].style
-          if (i == flowNum) {
-            flowFlag = false;
-          }
-        }
-      }
-
-      try {
-        flow[flowNum].innerHTML += text[flowNum].charAt(flowCount);
-        flowCount++;
-        if(flowCount == text[flowNum].length){
-          flowNum++;
-          flowCount = 0;
-        }
-        if (flowFlag == true) {
-          setTimeout(FlowText,flowTime);
-        }
-      } catch(e) {
-        // none
-      }
-      setTimeout(function(){
-        for (var i = icon.length - 1; i >= 0; i--) {
-          icon[i].style.opacity = "1";
-        }
-      },flowTime*flowTime);
-    }
 
     //**********************************************
     // chart percent
@@ -107,7 +32,7 @@ window.onload=function(){
     var chartsvg = document.getElementsByClassName('chartsvg');
     var backsvg = document.getElementsByClassName('backsvg');
 
-    var chartcolor = new Array("#F7464A","#1ba3f2","#23d340","#31c5f0","#ff781a");
+    var chartcolor = new Array("#F7464A","#1ba3f2","#23d340","#31c5f0","#A30C01");
 
    
 
@@ -154,20 +79,20 @@ window.onload=function(){
     sendmail.addEventListener('click',function(e){
 
       e.preventDefault();
-      // $.ajax({
-      //         url:"sendMessage.php",
-      //         type:"post",
-      //         data:{
-      //           "name":input[0].value,
-      //           "message":textarea[0].value
-      //         }
-      //       })
-      //         .done(function(data){
-      //             // ty[0].style.opacity="1";
-      //             // from[0].value="";
-      //             // textarea[0].value="";
-      //             // setTimeout(function(){ty[0].style.opacity="0";},4000);
-      //       });
+      $.ajax({
+              url:"sendMessage.php",
+              type:"post",
+              data:{
+                "name":input[0].value,
+                "message":textarea[0].value
+              }
+            })
+              .done(function(data){
+                  // ty[0].style.opacity="1";
+                  // from[0].value="";
+                  // textarea[0].value="";
+                  // setTimeout(function(){ty[0].style.opacity="0";},4000);
+            });
 
       if (input[0].value === ""){
         hiddentext[0].style.opacity="1";
@@ -240,14 +165,6 @@ window.onload=function(){
         num++;
           if (num == length){
             var slide = setInterval(function(){
-              if (slidenum > 1){
-                c_box[slidenum-1].style.width="10%";
-              }
-              if (c_box.length == slidenum) {
-                clearInterval(slide);
-              }
-
-              c_box[slidenum].style.width="60%";
               c_box[slidenum].style.display="block";
               c_box[slidenum].style.opacity="1";
               // console.log(c_box[slidenum-1]);
@@ -268,9 +185,4 @@ window.onload=function(){
     }
     // setTimeout(start,2000);
     start();
-  } else {
-    var inName = document.getElementById('inName');
-    inName.innerHTML = "looking only for PC";
-    inName.style.fontSize = "60px";
-  }
 }
