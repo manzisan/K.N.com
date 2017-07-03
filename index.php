@@ -12,7 +12,8 @@
   </head>
 <body>
   <header>
-    <h1>KUMAKURA NAOKI.com</h1>
+    <h1>KUMAKURA<br>NAOKI.com  <h2 class="sc"></h2>
+</h1>
     <nav>
       <ul>
         <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
@@ -44,7 +45,7 @@
 
         <div id="inName"></div>
 
-        <table class="update">
+        <!-- <table class="update">
           <tr>
             <td>2017,06,18</td>
             <td>change this project framework.</td>
@@ -61,7 +62,7 @@
             <td>2016,11,11</td>
             <td>Update my skill List.</td>
           </tr>
-        </table>
+        </table> -->
         <i class="fa fa-angle-down" aria-hidden="true"></i>
         </div><!--home-->
       </div>      
@@ -273,6 +274,18 @@ $(function(){
     $("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500 ,"swing");
     return false;
     })
+    $(window).scroll(function() {
+ 
+      // スクロール量を変数に格納
+      var sc = $(this).scrollTop();
+   
+      // HTMLにスクロール量を表示
+      $('.sc').text(sc);
+      if (sc > 1414 && sc < 2019) {
+        chart();
+      }
+ 
+    });
 });
 </script>
 </html>

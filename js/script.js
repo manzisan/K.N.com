@@ -1,8 +1,7 @@
 window.onload=function(){
 
-  var c_box = document.getElementsByClassName('content-box');
-  var c_main = document.getElementsByClassName('colomn-main');
-  var c_content = document.getElementsByClassName('colomn-content');
+    var c_box = document.getElementsByClassName('content-box');
+    var c_content = document.getElementsByClassName('colomn-content');
 
     //**********************************************
     // chart percent
@@ -36,24 +35,22 @@ window.onload=function(){
 
    
 
-      c_box[2].addEventListener('click',function(){
-        if (c_box[2].style.width != "60%") {
-          cnt = 0;
-          setInterval(count,10);
-          for (var i = 0; i < chartsvg.length; i++){
-            chartsvg[i].innerHTML="<circle cx='60' cy='60' r='40' class='chartcircle'/>";
-          }
-
-          for (var i = 0; i < backsvg.length; i++){
-            backsvg[i].innerHTML="<circle cx='60' cy='60' r='40' class='backcircle'/>";
-          }
-          var chartcircle = document.getElementsByClassName('chartcircle');
-          for (var i = 0; i < chartcircle.length; i++){
-            chartcircle[i].style.animationName="circle"+i;
-            chartcircle[i].style.stroke=chartcolor[i];
-          }
+      function chart() {
+        cnt = 0;
+        setInterval(count,10);
+        for (var i = 0; i < chartsvg.length; i++){
+          chartsvg[i].innerHTML="<circle cx='60' cy='60' r='40' class='chartcircle'/>";
         }
-      });
+
+        for (var i = 0; i < backsvg.length; i++){
+          backsvg[i].innerHTML="<circle cx='60' cy='60' r='40' class='backcircle'/>";
+        }
+        var chartcircle = document.getElementsByClassName('chartcircle');
+        for (var i = 0; i < chartcircle.length; i++){
+          chartcircle[i].style.animationName="circle"+i;
+          chartcircle[i].style.stroke=chartcolor[i];
+        }
+      }
 
     // detail chart color //
 
@@ -164,16 +161,7 @@ window.onload=function(){
       nameBox[num].innerHTML = myName[num];
         num++;
           if (num == length){
-            var slide = setInterval(function(){
-              c_box[slidenum].style.display="block";
-              c_box[slidenum].style.opacity="1";
-              // console.log(c_box[slidenum-1]);
-              slidenum++;
-
-            },150);// setInterval
-              
             flag = "";
-            setWindow();
             clearInterval(interval);
             for (var i = 0; i < h1.length; i++) {
               h1[i].style.opacity="1";
@@ -185,4 +173,21 @@ window.onload=function(){
     }
     // setTimeout(start,2000);
     start();
+
+    $("a[href^='#']").click(function(){
+    $("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500 ,"swing");
+    return false;
+    })
+    $(window).scroll(function() {
+ 
+      // スクロール量を変数に格納
+      var sc = $(this).scrollTop();
+   
+      // HTMLにスクロール量を表示
+      $('.sc').text(sc);
+      if (sc <= 840) {
+        chart();
+      }
+ 
+    });
 }

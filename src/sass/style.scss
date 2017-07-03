@@ -12,6 +12,7 @@
   /*font-family: "Italianno";*/
   /*font-family: "Quicksand";*/
   font-family: "Caviar Dreams";
+  // font-family: "COLDPLAY";
   /*font-family: "ヒラギノ角ゴ";*/
   /*font-family: "Osaka";*/
   text-decoration: none;
@@ -20,7 +21,9 @@
 html  {height: 100%;}
 body  {height: 100%;background-color: #aaa;}
 main  {height: 100%;transition: 2s;}
-p{text-align: center;}
+p{
+  text-align: center;
+}
 a {
   text-decoration: none;
   transition: .3s;
@@ -58,10 +61,10 @@ header {
     }
   }
   .icon {
-    padding-left: 4px;
     width: 100%;
     position: absolute;
     bottom: 32px;
+    left: 5%;
     li {
       width: 25px;
       height: 25px;
@@ -135,14 +138,7 @@ header {
   border-right: solid 1px #000;
   border-left: solid 1px #000;
   box-sizing: border-box;
-  opacity: 0;
-  display: none;
   float: right;
-  &:first-child {
-    width: 90%;
-    opacity: 1;
-    display: block;
-  }
   .colomn-content {
     height: 100%;
     width: 100%;
@@ -345,7 +341,8 @@ header {
 ***************************************************/
 
 #contact {
-  margin: auto;
+  margin: 0 auto;
+  padding-top: 10%;
   width: 640px;
   position: relative;
   .input-column {
@@ -373,9 +370,9 @@ header {
       margin: auto;
       display: block;
       background-color: #aaa;
-      border: none;
       border: solid 1px #000;
       padding: 8px;
+      margin-top: 8px;
       font-size: 16px;
       ime-mode: disabled;
       box-sizing: border-box;
