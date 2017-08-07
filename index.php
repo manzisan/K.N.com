@@ -31,38 +31,18 @@
     </ul>
   </header>
   <main>
+
     <!-- home -->
     <div class="content-box">
       <div class="colomn-content">
-        <!-- <div class="colomn-img">
-          <img src="img/home.png">
-          <div>home</div>
-        </div> -->
       <h1>HOME</h1>
       <div class="colomn-main">
         <div id="home">
 
-        <div id="inName"></div>
+          <div id="inName"></div>
 
-        <!-- <table class="update">
-          <tr>
-            <td>2017,06,18</td>
-            <td>change this project framework.</td>
-          </tr>
-          <tr>
-            <td>2016,12,15</td>
-            <td>adjustment mail form.</td>
-          </tr>
-          <tr>
-            <td>2016,11,23</td>
-            <td>change top page animation.</td>
-          </tr>
-          <tr>
-            <td>2016,11,11</td>
-            <td>Update my skill List.</td>
-          </tr>
-        </table> -->
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+
         </div><!--home-->
       </div>      
       </div><!-- colomn-content -->
@@ -71,26 +51,10 @@
     <!-- my infomation -->
     <div class="content-box">
       <div class="colomn-content">
-        <!-- <div class="colomn-img">
-        <div>profile</div>
-        </div> -->
         <h1>PROFILE</h1>
         <div class="colomn-main">
           <div id="profile">
-            <div class="icon-box">
-              <div class="icon">
-                
-              </div>
-              <div class="icon">
-                
-              </div>
-              <div class="icon">
-                
-              </div>
-              <div class="icon">
-                
-              </div>
-            </div>
+            <p>naiyo</p>
           </div>
         </div>
       </div><!-- colomn-content -->    
@@ -99,9 +63,6 @@
     <!-- skills -->
     <div class="content-box">
       <div class="colomn-content">
-        <!-- <div class="colomn-img">
-          <div>skill</div>
-        </div> -->
       <h1>SKILL</h1>
       <div class="colomn-main">
         <div id="skill">
@@ -213,21 +174,12 @@
     <!-- works -->
     <div class="content-box">
       <div class="colomn-content">
-        <!-- <div class="colomn-img">
-          <img src="img/work.png">
-          <div>works</div>
-        </div> -->
           <h1>WORKS</h1>
           <div class="colomn-main">
             <div id="works">
-              <div class="work-design">
-                  
+              
+              <p>naiyo</p>
 
-
-
-
-
-              </div>
             </div><!--works -->
           </div><!-- colomn-main -->
       </div><!-- colomn-content -->
@@ -236,23 +188,22 @@
     <!-- contact -->
     <div class="content-box">
       <div class="colomn-content">
-        <!-- <div class="colomn-img">
-        <img src="img/mail.png">
-        <div>CONTACT</div>
-        </div> -->
         <h1>CONTACT</h1>
         <div class="colomn-main">
           <div id="contact">
             <form action="sendMessage.php" method="post">
+
               <div class="input-column">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name">
               </div>
+              
               <div class="input-column">
                 <label for="message">Message</label>
                 <textarea name="message" id="message"></textarea>
               </div>
               <input type="submit" value="send" id="sendmail">
+
             </form> 
             <div class="error">
               <p class="hidden-text">plz enter your name</p>

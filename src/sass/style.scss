@@ -247,16 +247,6 @@ header {
 #home {
   position: relative;
   height: 100%;
-  table {
-  //   padding-top: 30px;
-  //   width: 300px;
-  //   margin: auto;
-    opacity: 0;
-  //   transition: 2s;
-  //   table td {
-  //     padding-top: 5px;
-  //   }
-  }
   i {
     display: block;
     font-size: 60px;
@@ -349,28 +339,15 @@ header {
   margin: auto;
   margin-bottom: 48px;
   p {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     text-align: center;
     font-size: 30px;
-  }
-  .icon-box {
-    width: 420px;
-    height: 500px;
-    margin: 0 auto;
-    .icon {
-      display: inline-block;
-      margin: 0;
-      width: 200px;
-      height: 200px;
-      transition: .5s;
-      a {
-        width: 100%;
-        height: 200px;
-        font-size: 100px;
-        &:hover {
-          color: #fafafa;
-        }
-      }
-    }
+    line-height: 25;
   }
 }
 
@@ -379,19 +356,17 @@ header {
 ***************************************************/
 
 #works {
-  // padding-top: 32px;
-  margin: auto;
-  .project {
-    height: 220px;
-    width: auto;
-    display: inline;
-    position: relative;
-    img {
-      height: 220px;
-      overflow: hidden;
-      position: relative;
-      vertical-align: bottom;
-    }
+  background-color: #fafafa;
+  p {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    line-height: 25;
   }
 }
 
