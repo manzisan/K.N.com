@@ -12,8 +12,7 @@
   </head>
 <body>
   <header>
-    <h1>KUMAKURA<br>NAOKI.com  <h2 class="sc"></h2>
-</h1>
+    <h1>KUMAKURA<br>NAOKI.com</h1>
     <nav>
       <ul>
         <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
@@ -31,7 +30,6 @@
     </ul>
   </header>
   <main>
-
     <!-- home -->
     <div class="content-box">
       <div class="colomn-content">
@@ -204,12 +202,12 @@
               <p>5</p>
             </div>
 
-          </div>
+          </div >
         </div><!-- skill -->
         
       </div>     
       </div><!-- colomn-content -->
-    </div><!-- content-box -->
+    </div class=""><!-- content-box -->
     
     <!-- works -->
     <div class="content-box">
@@ -223,7 +221,6 @@
             <div id="works">
               <div class="work-design">
                   
-
 
 
 
@@ -265,27 +262,6 @@
         </div><!-- colomn-main -->
       </div><!-- colomn-content -->
     </div><!-- content-box -->
-
   </main>
 </body>
-<script>
-$(function(){
-    $("a[href^='#']").click(function(){
-    $("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500 ,"swing");
-    return false;
-    })
-    $(window).scroll(function() {
- 
-      // スクロール量を変数に格納
-      var sc = $(this).scrollTop();
-   
-      // HTMLにスクロール量を表示
-      $('.sc').text(sc);
-      if (sc > 1414 && sc < 2019) {
-        chart();
-      }
- 
-    });
-});
-</script>
 </html>
