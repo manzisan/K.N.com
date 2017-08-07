@@ -19,6 +19,7 @@
 }
 
 
+$smallScreen: "only screen and (max-width: 750px)";
 
 
 //  common style
@@ -50,6 +51,12 @@ a {
   display: block;
 }
 
+#home,#skill,#profile,#works,#contact {
+  height: 100%;
+  @media #{$smallScreen} {
+    width: 100%;
+  }
+}
 //  header
 //******************************************
 
@@ -58,11 +65,17 @@ header {
   width: 10%;
   position: fixed;
   background-color: #333;
+  @media #{$smallScreen} {
+    width: 15%;
+  }
   h1 {
     font-size: 20px;
     text-align: center;
     padding: 40px 0;
     color: #fff;
+    @media #{$smallScreen} {
+      font-size: 10px;
+    }
   }
   nav ul {
     li {
@@ -73,9 +86,8 @@ header {
         padding: 32px 0;
         border-top: 0.5px solid #333;
         font-size: 24px;
-        &.nav-link:hover{
-          background-color: #333;
-          color: #fff;
+        @media #{$smallScreen} {
+          padding: 24px 0;
         }
       } 
     }
@@ -84,11 +96,22 @@ header {
     width: 100%;
     position: absolute;
     bottom: 32px;
-    left: 10%;
+    left: 2.5%;
+    @media #{$smallScreen} {
+      width: 100%;
+      left: 20%;
+      bottom: 16px;
+    }
     li {
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
       display: inline-block;
+      @media #{$smallScreen} {
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin-top: 8px;
+      }
       a {
         margin: 0 auto;
         &:hover {
@@ -99,7 +122,10 @@ header {
           width: 100%;
           text-align: center;
           color: #333;
-          line-height: 1.5;
+          line-height: 1.8;
+          @media #{$smallScreen} {
+            font-size: 20px;
+          }
         }
       }
       &:first-child {
@@ -138,12 +164,20 @@ header {
   right: 0px;
   width: 680px;
   margin: auto;
+  @media #{$smallScreen} {
+    top: 45%;
+    width: 100%;
+  }
   .namebox {
     text-align: center;
     float: left;
     transition: 2s;
     width: 40px;
     font-size: 50px;
+    @media #{$smallScreen} {
+      width: 18px;
+      font-size: 18px;
+    }
   }
 }
 
@@ -162,6 +196,9 @@ header {
   border-left: solid 1px #000;
   box-sizing: border-box;
   float: right;
+  @media #{$smallScreen} {
+    width: 85%;
+  }
   .colomn-content {
     height: 100%;
     width: 100%;
@@ -342,7 +379,7 @@ header {
 ***************************************************/
 
 #works {
-  padding-top: 32px;
+  // padding-top: 32px;
   margin: auto;
   .project {
     height: 220px;
@@ -363,10 +400,12 @@ header {
 ***************************************************/
 
 #contact {
-  margin: 0 auto;
-  padding-top: 10%;
+  margin: 48px auto 0;
   width: 640px;
   position: relative;
+  @media #{$smallScreen} {
+    width: 85%;
+  }
   .input-column {
     margin-bottom: 24px;
     label {

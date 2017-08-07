@@ -1,5 +1,5 @@
 window.onload = function() {
-
+  
   //**********************************************
   // chart percent
   //**********************************************
@@ -48,6 +48,11 @@ window.onload = function() {
       chartcircle[i].style.stroke=chartcolor[i];
     }
   }
+
+  $('header .chart-link').on('click',function(){
+    chart();
+    count();
+  });
 
   // detail chart color
 
@@ -172,25 +177,33 @@ window.onload = function() {
     return false;
   });
 
+  $(window).scroll(function() {
+
+    var sc = $(this).scrollTop();
+    var page_height = window.innerHeight;
+    var chartTrigger = page_height*2;
+    if (sc == chartTrigger) {
+      count();
+      chart();
+    }
+
+    for (var i = 1; i < $('.nav-link').length+1; i++) {
+      if (sc <= page_height*i-100) {
+        $("header nav ul li:nth-child("+i+") .nav-link").css({
+          "background-color":"#333",
+          "color":"#fff"
+        });
+        $("header nav ul li .nav-link").not($("header nav ul li:nth-child("+i+") .nav-link")).css({
+          "background-color":"#ddd",
+          "color":"#333"
+        });
+
+        return i;
+      }
+      
+    }
+  });
 } //window onload
 
-$(window).scroll(function() {
 
-  var sc = $(this).scrollTop();
-  var page_height = window.innerHeight;
-
-  for (var i = 1; i < $('.nav-link').length+1; i++) {
-    if (sc < page_height*i) {
-      $("header nav ul li:nth-child("+i+") .nav-link").css({
-        "background-color":"#333",
-        "color":"#fff"
-      });
-      $("header nav ul li .nav-link").not($("header nav ul li:nth-child("+i+") .nav-link")).css({
-        "background-color":"#ddd",
-        "color":"#333"
-      });
-      return;
-    }
-  }
-});
 

@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width" >
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 <link rel="stylesheet" type="text/css" href="./build/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +18,7 @@
       <ul>
         <li><a href="#home" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i></a></li>
         <li><a href="#profile" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-        <li><a href="#skill" class="nav-link"><i class="fa fa-pie-chart" aria-hidden="true"></i></a></li>
+        <li><a href="#skill" class="nav-link chart-link"><i class="fa fa-pie-chart" aria-hidden="true"></i></a></li>
         <li><a href="#works" class="nav-link"><i class="fa fa-html5" aria-hidden="true"></i></a></li>
         <li><a href="#contact" class="nav-link"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
       </ul>
