@@ -1,4 +1,4 @@
-window.onload=function() {
+window.onload = function() {
 
   //**********************************************
   // chart percent
@@ -49,7 +49,7 @@ window.onload=function() {
     }
   }
 
-  // detail chart color //
+  // detail chart color
 
   var chart_box = document.getElementsByClassName('chartbox');
   var s_detail = document.getElementsByClassName('skill-detail');
@@ -118,12 +118,11 @@ window.onload=function() {
   var abc = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
   var myName = new Array("K","U","M","A","K","U","R","A","N","A","O","K","I",".","c","o","m");
 
-  // var flag = true;
   var num = 0;
   var inName = document.getElementById('inName');
   var nameBox = document.getElementsByClassName('namebox');
   var length = myName.length;
-  var interval = setInterval(randomChange,50);
+  var change_function = setInterval(randomChange,50);
 
   for (var i = 0; i < myName.length; i++) {
     inName.innerHTML += "<span class='namebox'></span>";
@@ -149,18 +148,14 @@ window.onload=function() {
     }
   }
 
-  var h1 = document.getElementsByTagName('h1');
-  var update = document.getElementsByClassName('update');
-  var slidenum = 0;
   function setName() {
     var random = Math.floor( Math.random() * 18 );
     nameBox[num].innerHTML = myName[num];
-      num++;
-      if (num == length) {
-        flag = "";
-        clearInterval(interval);
-        return;
-      }// if length
+    num++;
+    if (num == length) {
+      clearInterval(change_function);
+      return;
+    } // if length
     setTimeout(setName,100);
   }
 
