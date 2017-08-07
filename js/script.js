@@ -1,8 +1,5 @@
 window.onload=function() {
 
-  // var c_box = document.getElementsByClassName('content-box');
-  // var c_content = document.getElementsByClassName('colomn-content');
-
   //**********************************************
   // chart percent
   //**********************************************
@@ -142,10 +139,9 @@ window.onload=function() {
       var random = Math.floor( Math.random() * 22 );
       if(flag === true) {
         nameBox[i].innerHTML = abc[random];
-      }
-      if(flag === false) {
+      }else if(flag === false) {
         try{
-            nameBox[num+i].innerHTML = abc[random];
+          nameBox[num + i].innerHTML = abc[random];
         }catch(e) {
           // for no alert
         }
@@ -163,14 +159,11 @@ window.onload=function() {
       if (num == length) {
         flag = "";
         clearInterval(interval);
-        for (var i = 0; i < h1.length; i++) {
-          h1[i].style.opacity = "1";
-        }
         return;
       }// if length
     setTimeout(setName,100);
   }
-  
+
   start();
 
   //**********************************************
@@ -178,42 +171,31 @@ window.onload=function() {
   //**********************************************
 
   $("a[href^='#']").click(function() {
-
     $("html,body").animate({
       scrollTop: $($(this).attr("href")).offset().top
-    }, 500 ,"swing");
-
-    $(this).css({
-      "background-color":"#333",
-      "color":"#fff"
-    });
-
-    $("a[href^='#']").not($(this)).css({
-      "background-color":"#ddd",
-      "color":"#333"
-    });
-
+    }, 700 ,"swing");
     return false;
-  })
-
-  var page_height = window.innerHeight;
-  $(window).scroll(function() {
-
-    var sc = $(this).scrollTop();
- 
-    if (sc <= page_height) {
-      $('header nav ul li a:nth-child(1)').css({
-        "background-color":"#333",
-        "color":"#fff"
-      });
-    }
-    if (sc <= page_height*2) {
-      console.log(2);
-      $('header nav ul li a:nth-child(2)').css({
-        "background-color":"#333",
-        "color":"#fff"
-      });
-    }
-
   });
-}
+
+} //window onload
+
+$(window).scroll(function() {
+
+  var sc = $(this).scrollTop();
+  var page_height = window.innerHeight;
+
+  for (var i = 1; i < $('.nav-link').length+1; i++) {
+    if (sc < page_height*i) {
+      $("header nav ul li:nth-child("+i+") .nav-link").css({
+        "background-color":"#333",
+        "color":"#fff"
+      });
+      $("header nav ul li .nav-link").not($("header nav ul li:nth-child("+i+") .nav-link")).css({
+        "background-color":"#ddd",
+        "color":"#333"
+      });
+      return;
+    }
+  }
+});
+

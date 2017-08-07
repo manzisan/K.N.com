@@ -15,11 +15,11 @@
     <h1>KUMAKURA<br>NAOKI.com</h1>
     <nav>
       <ul>
-        <li><a href="#home"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li><a href="#profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-        <li><a href="#skill"><i class="fa fa-pie-chart" aria-hidden="true"></i></a></li>
-        <li><a href="#works"><i class="fa fa-html5" aria-hidden="true"></i></a></li>
-        <li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+        <li><a href="#home" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li><a href="#profile" class="nav-link"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        <li><a href="#skill" class="nav-link"><i class="fa fa-pie-chart" aria-hidden="true"></i></a></li>
+        <li><a href="#works" class="nav-link"><i class="fa fa-html5" aria-hidden="true"></i></a></li>
+        <li><a href="#contact" class="nav-link"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
     <ul class="icon">
