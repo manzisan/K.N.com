@@ -169,7 +169,7 @@
         
       </div>     
       </div><!-- colomn-content -->
-    </div class=""><!-- content-box -->
+    </div><!-- content-box -->
     
     <!-- works -->
     <div class="content-box">
@@ -197,19 +197,20 @@
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name">
               </div>
-              
+
               <div class="input-column">
                 <label for="message">Message</label>
                 <textarea name="message" id="message"></textarea>
               </div>
+
               <input type="submit" value="send" id="sendmail">
 
             </form> 
             <div class="error">
-              <p class="hidden-text">plz enter your name</p>
-              <p class="hidden-text">plz enter message</p>
+              <p class="hidden-text">plz enter your name!</p>
+              <p class="hidden-text">plz enter message!</p>
+              <p class="hidden-text">Thanx! :D</p>
             </div>
-            <p class="hidden-text">Thanx.</p>
           </div><!-- contact -->
         </div><!-- colomn-main -->
       </div><!-- colomn-content -->

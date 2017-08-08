@@ -87,10 +87,10 @@ window.onload = function() {
       }
     })
       .done(function(data) {
-      // ty[0].style.opacity = "1";
-      // from[0].value = "";
-      // textarea[0].value = "";
-      // setTimeout(function() {ty[0].style.opacity = "0";},4000);
+      ty[0].style.opacity = "1";
+      from[0].value = "";
+      textarea[0].value = "";
+      setTimeout(function() {ty[0].style.opacity = "0";},4000);
     });
 
     if (input[0].value === "") {
