@@ -41,7 +41,7 @@
 
           <div id="inName"></div>
 
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
+          <span class="move-icon"><i id="rect" class="fa fa-angle-down" aria-hidden="true"></i></span>
 
         </div><!--home-->
       </div>      
@@ -55,29 +55,22 @@
         <div class="colomn-main">
           <div id="profile">
 
-            <?php $button_icon = array("steam","twitter",""); ?>
             <div id="switch">
               <ul class="profile-tab">
-                <li><a href="">menu01</a></li>
-                <li><a href="">menu02</a></li>
-                <li><a href="">menu03</a></li>
-                <li><a href="">menu04</a></li>
-                <li><a href="">menu05</a></li>
-                <!-- <li><a href="">menu06</a></li>
-                <li><a href="">menu07</a></li>
-                <li><a href="">menu08</a></li> -->
+                <li><a href="">STEAM</a></li>
+                <li><a href="">Shadowverse</a></li>
+                <li><a href="">My PC</a></li>
+                <li><a href="">AUDIO</a></li>
+                <li><a href="">DJ</a></li>
               </ul>
               <div id="content">
                 <div>
-                  
+                  aaaa
                 </div>
                 <div>content02</div>
                 <div>content03</div>
                 <div>content04</div>
                 <div>content05</div>
-                <!-- <div>content06</div>
-                <div>content07</div>
-                <div>content08</div> -->
               </div>
             </div>
           </div>
@@ -202,7 +195,7 @@
           <h1>WORKS</h1>
           <div class="colomn-main">
             <div id="works">
-              <?php for ($i=0; $i < 9; $i++): ?>
+              <?php for ($i=0; $i < 16; $i++): ?>
                 <div class="card"></div>
               <?php endfor ?>
             </div><!--works -->
@@ -243,30 +236,20 @@
   </main>
 </body>
 <script>
-  $(function(){
-    
-    var menuNmber = 0;
-    var menuNmbrPre = 0;
-    var bbox = 0;
-    var ew = $('#content').width() + 'px';
-    var slideSpeed = 500;
+  var i = 1;
 
-      $('.profile-tab li').eq(0).addClass('on');
-      $('#content div').eq(0).show().css('left', ew).animate( {left: '0px'}, slideSpeed);
-       
-      $(".profile-tab li a").click(function(e){
-        e.preventDefault();
-        menuNmbr = $(".profile-tab li a").index(this);
-        $('.profile-tab li').eq(menuNmbr).addClass('on');
-        $('#content div').eq(menuNmbr).show().css('left', ew).animate( {left: '0px'}, slideSpeed);
- 
-        if (menuNmbr != bbox) {
-          menuNmbrPre = bbox;
-          bbox = menuNmbr;
-          $('.profile-tab li').eq(menuNmbrPre).removeClass('on');
-          $('#content div').eq(menuNmbrPre).animate( {left: '-' + ew}, slideSpeed);
-        }
-    });
-  });
+function rect(test) {
+  console.log(i);
+    $('#rect').animate({
+        marginTop: '-=10px'
+    }, 800).animate({
+        marginTop: '+=10px'
+    }, 800);
+    i++;
+    setTimeout(rect,1600);
+  }
+  
+  // setInterval(rect, 1600); //アニメーションを繰り返す間隔
+  rect();
 </script>
 </html>

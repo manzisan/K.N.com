@@ -1,6 +1,32 @@
 window.onload = function() {
 
   //**********************************************
+  // move icon
+  //**********************************************
+
+  function moveIcon() {
+    $('.move-icon i').animate({
+        marginTop: '-=30px'
+    }, 800).animate({
+        marginTop: '+=30px'
+    }, 800);
+    setTimeout(moveIcon, 1600);
+  }
+
+  moveIcon();
+
+  function rect() {
+    $('#rect').animate({
+        marginTop: '-=10px'
+    }, 800).animate({
+        marginTop: '+=10px'
+    }, 800);
+    setTimeout(rect, 1600); //アニメーションを繰り返す間隔
+  }
+  
+  rect();
+
+  //**********************************************
   // chart percent
   //**********************************************
 
@@ -184,7 +210,7 @@ window.onload = function() {
     }
 
     for (var i = 1; i < $('.nav-link').length+1; i++) {
-      if (sc <= page_height*i-1) {
+      if (sc <= page_height*i-0.1) {
         $("header nav ul li:nth-child("+i+") .nav-link").css({
           "background-color":"#333",
           "color":"#fff"
@@ -205,6 +231,36 @@ window.onload = function() {
   $(".detail-button").on('click',function(){
     console.log($(this).next());
     $(this).children().toggleClass("active");
+  });
+
+  //**********************************************
+  // change profile contents
+  //**********************************************
+
+  var menuNmber = 0;
+  var menuNmbrPre = 0;
+  var bbox = 0;
+  var ew = $('#content').width() + 'px';
+  var slideSpeed = 500;
+
+  $('.profile-tab li').eq(0).addClass('on');
+  $('#content div').eq(0).show().css('left', ew).animate( {left: '0px'}, slideSpeed);
+     
+  $(".profile-tab li a").click(function(e){
+    e.preventDefault();
+    if ($(this).parent().hasClass('on')) {
+      return;
+    }
+    menuNmbr = $(".profile-tab li a").index(this);
+    $('.profile-tab li').eq(menuNmbr).addClass('on');
+    $('#content div').eq(menuNmbr).show().css('left', ew).animate( {left: '0px'}, slideSpeed);
+
+    if (menuNmbr != bbox) {
+      menuNmbrPre = bbox;
+      bbox = menuNmbr;
+      $('.profile-tab li').eq(menuNmbrPre).removeClass('on');
+      $('#content div').eq(menuNmbrPre).animate( {left: '-' + ew}, slideSpeed);
+    }
   });
 
 } //window onload
