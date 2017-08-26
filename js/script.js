@@ -8,7 +8,6 @@ window.onload = function() {
   var percent = document.getElementsByClassName('percent');
 
   function count() {
-    
     cnt++;
     if (cnt <= 75) {
       percent[0].innerHTML = cnt;
@@ -37,12 +36,9 @@ window.onload = function() {
     setInterval(count,10);
     for (var i = 0; i < chartsvg.length; i++) {
       chartsvg[i].innerHTML = "<circle cx='60' cy='60' r='40' class='chartcircle'/>";
-    }
-
-    for (var i = 0; i < backsvg.length; i++) {
       backsvg[i].innerHTML = "<circle cx='60' cy='60' r='40' class='backcircle'/>";
     }
-    var chartcircle = document.getElementsByClassName('chartcircle');
+    chartcircle = document.getElementsByClassName('chartcircle');
     for (var i = 0; i < chartcircle.length; i++) {
       chartcircle[i].style.animationName = "circle"+i;
       chartcircle[i].style.stroke=chartcolor[i];
@@ -55,7 +51,6 @@ window.onload = function() {
   });
 
   // detail chart color
-
   var chart_box = document.getElementsByClassName('chartbox');
   var s_detail = document.getElementsByClassName('skill-detail');
 
@@ -86,11 +81,11 @@ window.onload = function() {
         "message":textarea[0].value
       }
     })
-      .done(function(data) {
+    .done(function(data) {
       ty[0].style.opacity = "1";
       from[0].value = "";
       textarea[0].value = "";
-      setTimeout(function() {ty[0].style.opacity = "0";},4000);
+      setTimeout(function() { ty[0].style.opacity = "0"; },4000);
     });
 
     if (input[0].value === "") {
@@ -113,7 +108,7 @@ window.onload = function() {
       for (var i = 0; i < hiddentext.length; i++) {
         hiddentext[i].style.opacity = "0";
       }
-    },10000); 
+    },10000);
   });
 
   //**********************************************
@@ -124,6 +119,7 @@ window.onload = function() {
   var myName = new Array("K","U","M","A","K","U","R","A","N","A","O","K","I",".","c","o","m");
 
   var num = 0;
+  var flag = true;
   var inName = document.getElementById('inName');
   var nameBox = document.getElementsByClassName('namebox');
   var length = myName.length;
@@ -143,10 +139,10 @@ window.onload = function() {
       var random = Math.floor( Math.random() * 22 );
       if(flag === true) {
         nameBox[i].innerHTML = abc[random];
-      }else if(flag === false) {
-        try{
+      } else if(flag === false) {
+        try {
           nameBox[num + i].innerHTML = abc[random];
-        }catch(e) {
+        } catch(e) {
           // for no alert
         }
       }
@@ -160,7 +156,7 @@ window.onload = function() {
     if (num == length) {
       clearInterval(change_function);
       return;
-    } // if length
+    }
     setTimeout(setName,100);
   }
 
@@ -173,7 +169,7 @@ window.onload = function() {
   $("a[href^='#']").click(function() {
     $("html,body").animate({
       scrollTop: $($(this).attr("href")).offset().top
-    }, 700 ,"swing");
+    }, 500 ,"swing");
     return false;
   });
 
@@ -188,7 +184,7 @@ window.onload = function() {
     }
 
     for (var i = 1; i < $('.nav-link').length+1; i++) {
-      if (sc <= page_height*i-100) {
+      if (sc <= page_height*i-1) {
         $("header nav ul li:nth-child("+i+") .nav-link").css({
           "background-color":"#333",
           "color":"#fff"
@@ -197,12 +193,20 @@ window.onload = function() {
           "background-color":"#ddd",
           "color":"#333"
         });
-
         return i;
       }
-      
     }
   });
+
+  //**********************************************
+  // detail button
+  //**********************************************
+
+  $(".detail-button").on('click',function(){
+    console.log($(this).next());
+    $(this).children().toggleClass("active");
+  });
+
 } //window onload
 
 
