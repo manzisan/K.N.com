@@ -17,22 +17,31 @@
   text-decoration: none;
 }
 
-html  {height: 100%;}
-body  {height: 100%;background-color: #aaa;}
-main  {height: 100%;transition: 2s;}
+html{height: 100%;}
+body{height: 100%;background-color: #aaa;}
+
+main {
+  height: 100%;
+  
+  transition: 2s;
+}
+
 p{text-align: center;}
 
 /***************************************************
   in name
 ***************************************************/
 
-#inName {
+.name-row {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
   position: relative;
-  top: 40%;
-  left: 0px;
-  right: 0px;
-  width: 595px;
-  margin: auto;
+}
+#inName {
+  width: 650px;
   .namebox {
     text-align: center;
     float: left;
@@ -42,274 +51,23 @@ p{text-align: center;}
   }
 }
 
-/***************************************************
-  content box
-***************************************************/
-
-.content-box {
-  width: 10%;
-  background-color: #aaa;
+.content-row {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
   height: 100%;
-  float: left;
-  transition: 0.7s;
-  overflow: hidden;
-  position: relative;
-  border-right: solid 1px #000;
-  border-left: solid 1px #000;
-  box-sizing: border-box;
-  opacity: 0;
-  display: none;
-
-  &:first-child {
-    width: 100%;
-    opacity: 1;
-    display: block;
-  }
-  .colomn-content {
-    height: 100%;
-    width: 100%;
-    display: table;
-    .colomn-main {
-      width: 750px;
-      height: 100%;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      margin: auto;
-      z-index: 1;
-      display: table;
-      margin-top: 150px;
-    }
-    h1 {
-      text-align: center;
-      height: 10%;
-      padding-top: 30px;
-      font-size: 24px;
-      &:first-child {
-        opacity: 0;
-        transition: 2s;
-      }
-    }
-  }
+  position: absolute;
+  top: 0;
 }
 
-/*.colomn-img {
-  margin: auto;
-  display: table;
-  z-index: 2;
-  font-size: 14px;
-  transition: 0.3s;
-  display: table-cell;
-  vertical-align: middle;
-  color: #FFD700;
-  font-size: 30px;
-  height: 100%;
-  opacity: 0;
-}*/
-
-/***************************************************
-  home
-***************************************************/
-
-#home {
-  margin-top: 15%;
-  table {
-    padding-top: 30px;
-    width: 300px;
-    margin: auto;
-    opacity: 0;
-    transition: 2s;
-    table td {
-      padding-top: 5px;
-    }
-  }
-}
-
-/***************************************************
-  skill
-***************************************************/
-
-#skill{
-  width: 100%;
-  .skill-title {
-    margin: 8px 0 32px 0;
-    font-size: 22px;
-  }
-  .chartbox {
+.first-column {
+  // display: none;
+  // right: 0;
+  h2 {
+    width: 40px;
+    font-size: 40px;
+    font-weight: normal;
     text-align: center;
-    position: relative;
-    float: left;
-    top: -10px;
-    p {
-      width: 150px;
-      font-size: 14px;
-    }
-    svg {
-      transform: rotate(-90deg);
-      width: 120px;
-      height: 120px;
-    }
-    circle {
-      fill: transparent;
-      text-align: center;
-      stroke-width: 5;
-      animation-iteration-count: 1;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-    }
-    .backsvg {
-      position: absolute;
-      z-index: 0;
-      left: 16px;
-    }
-    .percent {
-      position: absolute;
-      top: 20px;
-      left: 0;
-      width: 150px;
-      height: 150px;
-      text-align: center;
-      font-size: 20px;
-      line-height: 120px;
-      small {
-        font-size: 10px;
-      }
-    }
-  }
-  .skill-detail {
-    width: 100%;
-    .skill-detail {
-      display: none;
-      width: 100%;
-      &:first-child {
-        display: block;
-      }
-    }
-  }
-}
-
-.chartbox svg.backsvg circle {
-  animation-iteration-count: 1;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  animation-name: circleback;
-  stroke-width: 5;
-  stroke: #fff;
-}
-
-/***************************************************
-  profile
-***************************************************/
-
-#profile {
-  margin: auto;
-  margin-bottom: 48px;
-  p {
-    text-align: center;
-    font-size: 30px;
-  }
-  .icon-box {
-    width: 420px;
-    height: 500px;
-    margin: 0 auto;
-    .icon {
-      display: inline-block;
-      margin: 0;
-      width: 200px;
-      height: 200px;
-      transition: .5s;
-      a {
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
-/***************************************************
-  works
-***************************************************/
-
-#works {
-  padding-top: 32px;
-  margin: auto;
-  .project {
-    height: 220px;
-    width: auto;
-    display: inline;
-    position: relative;
-    img {
-      height: 220px;
-      overflow: hidden;
-      position: relative;
-      vertical-align: bottom;
-    }
-  }
-}
-
-/***************************************************
-  contact
-***************************************************/
-
-#contact {
-  margin: auto;
-  width: 640px;
-  position: relative;
-  .input-column {
-    margin-bottom: 24px;
-    label {
-      width: 100%;
-      padding: 4px;
-    }
-    #name {
-      width: 100%;
-      padding: 8px;
-      appearance: none;
-      border: none;
-      border-bottom: solid 1px #000;
-      background-color: #aaa;
-      font-size: 22px;
-      ime-mode: disabled;
-      box-sizing: border-box;
-    }
-    #message {
-      resize: none;
-      text-align: left;
-      width: 100%;
-      height: 200px;
-      margin: auto;
-      display: block;
-      background-color: #aaa;
-      border: none;
-      border: solid 1px #000;
-      padding: 8px;
-      font-size: 16px;
-      ime-mode: disabled;
-      box-sizing: border-box;
-    }
-  }
-}
-
-
-
-#sendmail {
-  display: block;
-  appearance: none;
-  clear: both;
-  width: 100%;
-  text-align: center;
-  padding: 8px 0;
-  margin: 32px 0 48px 0;
-  border-radius: 4px;
-  background-color: #aaa;
-  border: solid 1px #000;
-  transition: 0.2s;
-  cursor: pointer;
-  &:active {
-    background-color: #000;
-    color: #aaa;
   }
 }

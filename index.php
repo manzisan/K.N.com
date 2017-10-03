@@ -9,30 +9,29 @@
   </head>
     <title>KUMAKURA NAOKI.com</title>
   </head>
-  <style>
-    #inName {
-      transition: 0.5s;
-      font-size: 500px;
-      font-weight: bold;
-    }
-  </style>
 <body>
-    
-  <div id="inName"></div>
+
+<main>
+  
+  <div class="name-row">
+    <div id="inName">KUMAKURA NAOKI.com</div>
+  </div>
+
+  <div class="content-row">
+    <div id="works" class="first-column">
+    <h2>W<br>O<br>R<br>K<br>S</h2>
+  </div>
+
+  <div id="profile" class="first-column">
+    <h2>P<br>R<br>O<br>F<br>I<br>L<br>E</h2>
+  </div>
+
+  <div id="contact" class="first-column">
+    <h2>C<br>O<br>N<br>T<br>A<br>C<br>T</h2>
+  </div>
+  </div>
+</main>
 
 </body>
 <script type="text/javascript" src="js/randomtext.js"></script>
-<script>
-  var pxNum = 500;
-  var pxCount = 5;
-  function changePx() {
-    pxCount+=1;
-    pxNum-=pxCount;
-    $('#inName').css({'font-size':pxNum+'px'});
-  }
-  setInterval(function(){
-    changePx();
-  },100);
-
-</script>
 </html>
