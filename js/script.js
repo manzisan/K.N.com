@@ -1,90 +1,14 @@
-window.onload = function() {
-
-  //**********************************************
-  // move icon
-  //**********************************************
-
-  function moveIcon() {
-    $('.move-icon i').animate({
-        marginTop: '-=30px'
-    }, 800).animate({
-        marginTop: '+=30px'
-    }, 800);
-    setTimeout(moveIcon, 1600);
-  }
-
-  moveIcon();
-
-  function rect() {
-    $('#rect').animate({
-        marginTop: '-=10px'
-    }, 800).animate({
-        marginTop: '+=10px'
-    }, 800);
-    setTimeout(rect, 1600); //アニメーションを繰り返す間隔
-  }
-  
-  rect();
+window.onload = ()=> {
 
   //**********************************************
   // chart percent
   //**********************************************
 
-  var cnt = 0;
-  var percent = document.getElementsByClassName('percent');
-
-  function count() {
-    cnt++;
-    if (cnt <= 75) {
-      percent[0].innerHTML = cnt;
-    }
-    if (cnt <= 75) {
-      percent[1].innerHTML = cnt;
-    }
-    if (cnt <= 75) {
-      percent[2].innerHTML = cnt;
-    }
-    if (cnt <= 50) {
-      percent[3].innerHTML = cnt;
-    }
-    if (cnt <= 25) {
-      percent[4].innerHTML = cnt;
-    }
-  }
-
-  var chartsvg = document.getElementsByClassName('chartsvg');
-  var backsvg = document.getElementsByClassName('backsvg');
-
-  var chartcolor = new Array("#F7464A","#1ba3f2","#23d340","#31c5f0","#A30C01");
-
-  function chart() {
-    cnt = 0;
-    setInterval(count,10);
-    for (var i = 0; i < chartsvg.length; i++) {
-      chartsvg[i].innerHTML = "<circle cx='60' cy='60' r='40' class='chartcircle'/>";
-      backsvg[i].innerHTML = "<circle cx='60' cy='60' r='40' class='backcircle'/>";
-    }
-    chartcircle = document.getElementsByClassName('chartcircle');
-    for (var i = 0; i < chartcircle.length; i++) {
-      chartcircle[i].style.animationName = "circle"+i;
-      chartcircle[i].style.stroke=chartcolor[i];
-    }
-  }
-
-  $('header .chart-link').on('click',function(){
-    chart();
-    count();
+  const chartcolor = new Array("#F7464A","#1ba3f2","#23d340","#31c5f0","#A30C01");
+  const skillwidth = new Array("60%","60%","70%","50%","30%");
+  $(".skill-bar").each(function(i){
+    $(this).animate({width:skillwidth[i],backgroundColor:chartcolor[i]}, 500);
   });
-
-  // detail chart color
-  var chart_box = document.getElementsByClassName('chartbox');
-  var s_detail = document.getElementsByClassName('skill-detail');
-
-  for (var i = 0; i < chart_box.length; i++) {
-    backsvg[i].addEventListener('click',function() {
-      this.style.backGroundColor = "red";
-    });
-  }
 
   //**********************************************
   // send mail
@@ -204,10 +128,10 @@ window.onload = function() {
     var sc = $(this).scrollTop();
     var page_height = window.innerHeight;
     var chartTrigger = page_height*2;
-    if (sc == chartTrigger) {
-      count();
-      chart();
-    }
+    // if (sc == chartTrigger) {
+      // count();
+      // chart();
+    // }
 
     for (var i = 1; i < $('.nav-link').length+1; i++) {
       if (sc <= page_height*i-0.1) {
@@ -264,6 +188,3 @@ window.onload = function() {
   });
 
 } //window onload
-
-
-

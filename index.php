@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="./build/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
   </head>
     <title>KUMAKURA NAOKI.com</title>
@@ -26,7 +27,7 @@
     <ul class="icon">
       <li><a href="https://github.com/manzisan" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
       <li><a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-      <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>                                                      
       <li><a href="http://steamcommunity.com/id/manzisan" target="_blank"><i class="fa fa-steam" aria-hidden="true"></i></a></li>
     </ul>
   </header>
@@ -84,108 +85,34 @@
       <h1>SKILL</h1>
       <div class="colomn-main">
         <div id="skill">
-          <p class="skill-title">WEB</p>
           
-          <div class="chartbox">
-            <p>HTML</p>
-            <svg class="backsvg"></svg>
-            <svg class="chartsvg"></svg>
-            <div class="percent"></div>
+          <div class="layout-row">
+            <div class="skill-bg"></div>
+            <div class="skill-bar"></div>
           </div>
 
-          <div class="chartbox">
-            <p>CSS</p>
-            <svg class="backsvg"></svg>
-            <svg class="chartsvg"></svg>
-            <div class="percent"></div>
+          <div class="layout-row">
+            <div class="skill-bg"></div>
+            <div class="skill-bar"></div>
           </div>
 
-          <div class="chartbox">
-            <p>JAVA SCRIPT</p>
-            <svg class="backsvg"></svg>
-            <svg class="chartsvg"></svg>
-            <div class="percent"></div>
+          <div class="layout-row">
+            <div class="skill-bg"></div>
+            <div class="skill-bar"></div>
           </div>
 
-          <div class="chartbox">
-            <p>PHP</p>
-            <svg class="backsvg"></svg>
-            <svg class="chartsvg"></svg>
-            <div class="percent"></div>
+          <div class="layout-row">
+            <div class="skill-bg"></div>
+            <div class="skill-bar"></div>
           </div>
 
-          <div class="chartbox">
-            <p>RUBY</p>
-            <svg class="backsvg"></svg>
-            <svg class="chartsvg"></svg>
-            <div class="percent"></div>
+          <div class="layout-row">
+            <div class="skill-bg"></div>
+            <div class="skill-bar"></div>
           </div>
 
-          <div class="skill-detail">
-
-            <div class="skill-detail">
-              <p class="skill-title">html detail</p>
-
-              <div class="chartbox">
-                <p>HTML 5</p>
-                <svg class="backsvg"></svg>
-                <svg class="chartsvg"></svg>
-                <div class="percent"></div>
-              </div>
-              <div class="chartbox">
-                <p>XML</p>
-                <svg class="backsvg"></svg>
-                <svg class="chartsvg"></svg>
-                <div class="percent"></div>
-              </div>
-              <div class="chartbox">
-                <p>XSL</p>
-                <svg class="backsvg"></svg>
-                <svg class="chartsvg"></svg>
-                <div class="percent"></div>
-              </div>
-            </div>
-
-            <div class="skill-detail">
-              <p class="skill-title">css detail</p>
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
-
-            <div class="skill-detail">
-              <h2>js-detail</h2>
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
-
-            <div class="skill-detail">
-              <h2>php-detail</h2>
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
-
-            <div class="skill-detail">
-              <h2>ruby-detail</h2>
-              <p>1</p>
-              <p>2</p>
-              <p>3</p>
-              <p>4</p>
-              <p>5</p>
-            </div>
-
-          </div >
         </div><!-- skill -->
-        
-      </div>     
+      </div>
       </div><!-- colomn-content -->
     </div><!-- content-box -->
     
@@ -235,21 +162,4 @@
     </div><!-- content-box -->
   </main>
 </body>
-<script>
-  var i = 1;
-
-function rect(test) {
-  console.log(i);
-    $('#rect').animate({
-        marginTop: '-=10px'
-    }, 800).animate({
-        marginTop: '+=10px'
-    }, 800);
-    i++;
-    setTimeout(rect,1600);
-  }
-  
-  // setInterval(rect, 1600); //アニメーションを繰り返す間隔
-  rect();
-</script>
 </html>
