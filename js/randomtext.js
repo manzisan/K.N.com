@@ -1,69 +1,50 @@
-// random text
-var abc = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-var myName = new Array("K","U","M","A","K","U","R","A","N","A","O","K","I",".","c","o","m");
+window.onload = ()=> {
 
-var flag = true;
-var num = 0;
-var inName = document.getElementById('inName');
-var nameBox = document.getElementsByClassName('namebox');
-var length = myName.length;
-var interval = setInterval(randomChange,50);
+  var flag = false;
+  var nameNum = 0;
+  var inName = document.getElementById('inName');
+  var nameBox = document.getElementsByClassName('namebox');
+  var abc = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+  var myName = new Array();
 
-  for (var i = 0; i < myName.length; i++){
+  for (var i = 0; i < inName.innerHTML.length; i++) {
+    myName[i] = inName.innerHTML.charAt(i);
+  }
+
+  inName.innerHTML = "";
+
+  for (var i = 0; i < myName.length; i++) {
     inName.innerHTML += "<span class='namebox'></span>";
   }
 
-  function start(){
-    flag = false;
-    setName();
-  }
-
-  function randomChange(){
+  var randomChange = () => {
     for (var i = 0; i < myName.length; i++) {
-      var random = Math.floor( Math.random() * 22 );
-      if(flag === true){
+      var random = Math.floor( Math.random() * abc.length );
+      if(flag) {
         nameBox[i].innerHTML = abc[random];
-      }
-      if(flag === false){
-        try{
-            nameBox[num+i].innerHTML = abc[random];
-        }catch(e){
-          // no alert log
+      } else {
+        try {
+          nameBox[nameNum + i].innerHTML = abc[random];
+        } catch(e) {
+          // for no alert
         }
       }
     }
   }
 
-var h1 = document.getElementsByTagName('h1');
-var update = document.getElementsByClassName('update');
-var slidenum = 0;
-
-  function setName(){
-  var random = Math.floor( Math.random() * 18 );
-    nameBox[num].innerHTML = myName[num];
-      num++;
-        if (num == length){
-        var slide = setInterval(function(){
-          if (slidenum > 1){
-            c_box[slidenum-1].style.width="10%";
-          }
-          if (c_box.length == slidenum) {
-            clearInterval(slide);
-          }
-          c_box[slidenum].style.width="60%";
-          c_box[slidenum].style.display="block";
-          c_box[slidenum].style.opacity="1";
-          slidenum++;
-        },150);// setInterval
-        flag = "";
-        setWindow();
-        clearInterval(interval);
-        for (var i = 0; i < h1.length; i++) {
-          h1[i].style.opacity="1";
-        }
-        update[0].style.opacity="1";
-        return;
-        }//length
+  var setName = () => {
+    var random = Math.floor( Math.random() * myName.length );
+    nameBox[nameNum].innerHTML = myName[nameNum];
+    nameNum++;
+    // if end of random change logic
+    if (nameNum === myName.length) {
+      flag = "";
+      return;
+    }
     setTimeout(setName,100);
   }
-  start();
+
+  setInterval(randomChange,50);
+  setName();
+
+}

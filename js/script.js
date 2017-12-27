@@ -62,57 +62,6 @@ window.onload = ()=> {
   });
 
   //**********************************************
-  // randome text
-  //**********************************************
-
-  var abc = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-  var myName = new Array("K","U","M","A","K","U","R","A","N","A","O","K","I",".","c","o","m");
-
-  var num = 0;
-  var flag = true;
-  var inName = document.getElementById('inName');
-  var nameBox = document.getElementsByClassName('namebox');
-  var length = myName.length;
-  var change_function = setInterval(randomChange,50);
-
-  for (var i = 0; i < myName.length; i++) {
-    inName.innerHTML += "<span class='namebox'></span>";
-  }
-
-  function start() {
-    flag = false;
-    setName();
-  }
-
-  function randomChange() {
-    for (var i = 0; i < myName.length; i++) {
-      var random = Math.floor( Math.random() * 22 );
-      if(flag === true) {
-        nameBox[i].innerHTML = abc[random];
-      } else if(flag === false) {
-        try {
-          nameBox[num + i].innerHTML = abc[random];
-        } catch(e) {
-          // for no alert
-        }
-      }
-    }
-  }
-
-  function setName() {
-    var random = Math.floor( Math.random() * 18 );
-    nameBox[num].innerHTML = myName[num];
-    num++;
-    if (num == length) {
-      clearInterval(change_function);
-      return;
-    }
-    setTimeout(setName,100);
-  }
-
-  start();
-
-  //**********************************************
   // header nav
   //**********************************************
 
@@ -186,5 +135,23 @@ window.onload = ()=> {
       $('#content div').eq(menuNmbrPre).animate( {left: '-' + ew}, slideSpeed);
     }
   });
+
+  // API end pont
+  const steamEndpoint = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=96733F3E4A9AD145842869253380B7AB&steamid=76561198078555010&format=json";
+  // subcsription key
+  const steamKey = "96733F3E4A9AD145842869253380B7AB";
+  // steam ID
+  const steamID = "76561198078555010";
+
+  console.log(steamID);
+
+  $.ajax({
+    url:"sendMessage.php",
+    type:"post",
+    data:{
+      "name":input[0].value,
+      "message":textarea[0].value
+    }
+  })
 
 } //window onload

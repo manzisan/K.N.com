@@ -9,9 +9,8 @@
 <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-  </head>
-    <title>KUMAKURA NAOKI.com</title>
-  </head>
+<title>KUMAKURA NAOKI.com</title>
+</head>
 <body>
   <header>
     <h1>KUMAKURA<br>NAOKI.com</h1>
@@ -27,25 +26,25 @@
     <ul class="icon">
       <li><a href="https://github.com/manzisan" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
       <li><a href="" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-      <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>                                                      
+      <li><a href="" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
       <li><a href="http://steamcommunity.com/id/manzisan" target="_blank"><i class="fa fa-steam" aria-hidden="true"></i></a></li>
     </ul>
   </header>
   <main>
-
     <!-- home -->
     <div class="content-box">
       <div class="colomn-content">
-      <h1>HOME</h1>
-      <div class="colomn-main">
-        <div id="home">
+        <h1>HOME</h1>
+        <div class="colomn-main">
+          <div id="home">
 
-          <div id="inName"></div>
+            <div id="inName"></div>
+            <span class="move-icon">
+              <i id="rect" class="fa fa-angle-down" aria-hidden="true"></i>
+            </span>
 
-          <span class="move-icon"><i id="rect" class="fa fa-angle-down" aria-hidden="true"></i></span>
-
-        </div><!--home-->
-      </div>      
+          </div><!--home-->
+        </div><!-- colomn-main -->
       </div><!-- colomn-content -->
     </div><!-- content-box -->
     
@@ -59,14 +58,14 @@
             <div id="switch">
               <ul class="profile-tab">
                 <li><a href="">STEAM</a></li>
-                <li><a href="">Shadowverse</a></li>
-                <li><a href="">My PC</a></li>
+                <li><a href="">APPAREL</a></li>
+                <li><a href="">PC</a></li>
                 <li><a href="">AUDIO</a></li>
-                <li><a href="">DJ</a></li>
+                <li><a href="">OTHER</a></li>
               </ul>
               <div id="content">
                 <div>
-                  aaaa
+                  adwqdq
                 </div>
                 <div>content02</div>
                 <div>content03</div>
@@ -75,58 +74,58 @@
               </div>
             </div>
           </div>
-        </div>
+        </div><!-- colomn-main -->
       </div><!-- colomn-content -->
     </div><!-- content-box -->
 
     <!-- skills -->
     <div class="content-box">
       <div class="colomn-content">
-      <h1>SKILL</h1>
-      <div class="colomn-main">
-        <div id="skill">
-          
-          <div class="layout-row">
-            <div class="skill-bg"></div>
-            <div class="skill-bar"></div>
-          </div>
+        <h1>SKILL</h1>
+        <div class="colomn-main">
+          <div id="skill">
+            
+            <div class="layout-row">
+              <div class="skill-bg"></div>
+              <div class="skill-bar"></div>
+            </div>
 
-          <div class="layout-row">
-            <div class="skill-bg"></div>
-            <div class="skill-bar"></div>
-          </div>
+            <div class="layout-row">
+              <div class="skill-bg"></div>
+              <div class="skill-bar"></div>
+            </div>
 
-          <div class="layout-row">
-            <div class="skill-bg"></div>
-            <div class="skill-bar"></div>
-          </div>
+            <div class="layout-row">
+              <div class="skill-bg"></div>
+              <div class="skill-bar"></div>
+            </div>
 
-          <div class="layout-row">
-            <div class="skill-bg"></div>
-            <div class="skill-bar"></div>
-          </div>
+            <div class="layout-row">
+              <div class="skill-bg"></div>
+              <div class="skill-bar"></div>
+            </div>
 
-          <div class="layout-row">
-            <div class="skill-bg"></div>
-            <div class="skill-bar"></div>
-          </div>
+            <div class="layout-row">
+              <div class="skill-bg"></div>
+              <div class="skill-bar"></div>
+            </div>
 
-        </div><!-- skill -->
-      </div>
+          </div><!-- skill -->
+        </div><!-- colomn-main -->
       </div><!-- colomn-content -->
     </div><!-- content-box -->
     
     <!-- works -->
     <div class="content-box">
       <div class="colomn-content">
-          <h1>WORKS</h1>
-          <div class="colomn-main">
-            <div id="works">
-              <?php for ($i=0; $i < 16; $i++): ?>
-                <div class="card"></div>
-              <?php endfor ?>
-            </div><!--works -->
-          </div><!-- colomn-main -->
+        <h1>WORKS</h1>
+        <div class="colomn-main">
+          <div id="works">
+            <?php for ($i=0; $i < 16; $i++): ?>
+              <div class="card"></div>
+            <?php endfor ?>
+          </div><!--works -->
+        </div><!-- colomn-main -->
       </div><!-- colomn-content -->
     </div><!-- content-box -->
 
@@ -150,7 +149,7 @@
 
               <input type="submit" value="send" id="sendmail">
 
-            </form> 
+            </form>
             <div class="error">
               <p class="hidden-text">plz enter your name!</p>
               <p class="hidden-text">plz enter message!</p>
