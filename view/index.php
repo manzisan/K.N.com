@@ -51,23 +51,19 @@
   </div>
 </body>
 <script>
-  $(".box").on("click",function(){
+  import at {  } from "aaa";
+  $(".box").on("click",()=> {
     $(".close").show();
     $(this).addClass("view-mode");
     $(".container").addClass("view-mode-container");
-    $(".box").not($(this)).hide();
-    $(".text").css({
-      "transform":"rotate(0deg)",
-    })
+    $(".box").not($(this)).delay(100).hide();
+    index = $(this).index();
   });
-  $(".close span").on("click",function(){
+  $(".close span").on("click",()=> {
     $(".close").hide();
     $(".box").removeClass("view-mode");
     $(".container").removeClass("view-mode-container");
-    $(".box").not($(this)).show();
-    $(".text").css({
-      "transform":"rotate(-45deg)",
-    })
+    $(".box").not($(this)).delay(100).show();
   });
 </script>
 </html>
