@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-<link rel="stylesheet" type="text/css" href="./build/css/style.css">
-<!-- <link rel="stylesheet" href="http://manz1.jellybean.jp/css/style.css"> -->
+<link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+<script src="js/randomText.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
-  </head>
-    <title>KUMAKURA NAOKI.com</title>
-  </head>
+<title>KUMAKURA NAOKI.com</title>
+</head>
 <body>
   <div id="Wrap">
     <header>
-      <h1>Kumakura Naoki.com</h1>
+      <h1 id="inName">Kumakura Naoki.com</h1>
       <div class="icon">
         
       </div>
@@ -36,12 +35,10 @@
           "Play Station.net <i class='fab fa-playstation'></i>",
           "Discord <i class='fab fa-discord'></i>",
         ];
-        for ($i=0; $i < 11; $i++) :
+        for ($i=0; $i < count($title); $i++) :
       ?>
         <div class="box">
-          <div class="text">
-            <?= $title[$i] ?>
-          </div>
+          <div class="text"><?= $title[$i] ?></div>
         </div>
       <?php endfor; ?>
     </div>
@@ -51,15 +48,25 @@
   </div>
 </body>
 <script>
+  if ( localStorage.getItem('isDoneSetReplace') == 'false' ) {
+    randomText();
+  }
+  // $('header').animate({
+  //   height: '48px',
+  //   lineHeight: '24px',
+  // }, 1500);
   $(".box").on("click",function(){
     $(".close").show();
     $(this).addClass("view-mode");
-    $(".container").addClass("view-mode-container");
     $(".box").not($(this)).hide();
+    $(".container").addClass("view-mode-container");
     $(".text").css({
       "transform":"rotate(0deg)",
     })
+    
   });
+
+
   $(".close span").on("click",function(){
     $(".close").hide();
     $(".box").removeClass("view-mode");

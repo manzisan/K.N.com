@@ -11,6 +11,9 @@ header {
   width: 100%;
   background-color: #000;
   color: #fff;
+  position: absolute;
+  z-index: 10;
+  height: 1000px;
   h1 {
     padding: 8px 0 8px 8px;
   }
@@ -32,7 +35,7 @@ footer small {
 
 .container {
   width: 1160px;
-  margin: 24px auto 0;
+  margin: 0 auto 0;
 }
 
 .close {
