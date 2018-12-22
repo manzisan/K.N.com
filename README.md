@@ -1,3 +1,0 @@
-jesus
-
-http://kumakuranaoki.com/
